@@ -11,10 +11,10 @@ var users=[
 ];
 
 
-/* GET users listing. */
-/*router.get('/', function (req, res, next) {
+ //GET users listing.
+router.get('/', function (req, res, next) {
     res.send('Hello ' + req.query.name);
-});*/
+});
 
 router.post('/', function (req, res, next) {
     switch (req.method) {

@@ -4,16 +4,38 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../jslib/jquery2.1.4.min.js"></script>
+    <style>
+        #username{
+
+            width:200px;
+            height:40px;
+            border: 0;
+            background-color: aqua;
+        }
+        #password{
+
+            width:200px;
+            height:40px;
+            margin-top:30px;
+            border: 0;
+            background-color: aqua;
+        }
+        #button{
+            width:80px;
+            height: 40px;
+
+        }
+    </style>
 </head>
 <body>
 <form id="form">
     <label>
-        账号：<input id="username" type="text" required="required" >
-        密码：<input id="password" type="number" required="required">
+        账号：<input id="username" type="text" required="required" placeholder="请输入账号"><br>
+        密码：<input id="password" type="password" required="required" placeholder="请输入密码">
     </label>
-    <input type="submit">
+    <input id="button" type="submit" value="LogIn">
 </form>
-<div id="result"></div>
+<div id="result" style="font-size:48px;color: red;"></div>
 
 <script src="main.js"></script>
 </body>
