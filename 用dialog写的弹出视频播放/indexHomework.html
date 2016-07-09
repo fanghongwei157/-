@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>动画</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    <script>
+        $(function() {
+            var video=$("#video1");
+            var dialog=$("#dialog");
+
+            dialog.dialog({
+                autoOpen: false,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+
+            },{});
+
+            $( "#opener" ).click(function() {
+                $( "#dialog" ).dialog( "open" );
+            });
+            dialog.on("dialogclose", function () {
+                video[0].pause(); //这里的video[0] 指的就是video，这是<video>标签的特性
+                //console.log(video);
+            });
+            
+        });
+    </script>
+</head>
+<body>
+
+<div id="dialog" title="Basic dialog" >
+    <video id="video1" width="300px" controls="controls" >
+        <source src="mov_bbb.mp4" type="video/mp4" />
+        <source src="mov_bbb.ogg" type="video/ogg" />
+        Your browser does not support HTML5 video.
+    </video>
+</div>
+
+<button id="opener">video play</button>
+
+
+
+</body>
+</html>
